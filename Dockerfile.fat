@@ -14,7 +14,7 @@ RUN mkdir /opt \
 
 ENV PATH=$PATH:/opt/activator/bin
 
-RUN activator
+RUN activator help || :
 
 VOLUME /src
 WORKDIR /src
