@@ -1,6 +1,6 @@
 FROM java:openjdk-8-jdk-alpine
 
-RUN apk update && apk add unzip bash openssh-client git ca-certificates && rm -rf /var/cache/apk/* 
+RUN apk update && apk add unzip bash openssh-client nodejs git ca-certificates && rm -rf /var/cache/apk/* 
 
 ENV ACTIVATOR_VER 1.3.10
 
