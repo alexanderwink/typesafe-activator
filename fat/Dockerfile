@@ -13,7 +13,12 @@ RUN cd /opt \
 
 ENV PATH=$PATH:/opt/activator/bin
 
-RUN activator help || :
+WORKDIR /src
+RUN activator new dummy play-java
+WORKDIR /src/dummy
+RUN activator help
+WORKDIR /src
+RUN rm -Rf dummy
 
 ENV PHANTOM_JS phantomjs-2.1.1-linux-x86_64
 
@@ -32,4 +37,3 @@ RUN cd /opt \
  && unzip chromedriver_linux64.zip
 
 VOLUME /src
-WORKDIR /src
