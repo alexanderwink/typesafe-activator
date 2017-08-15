@@ -2,7 +2,7 @@ FROM java:openjdk-8-jdk-alpine
 
 RUN apk update && apk add unzip bash git ca-certificates && rm -rf /var/cache/apk/* 
 
-ENV ACTIVATOR_VER 1.3.10
+ENV ACTIVATOR_VER 1.3.12
 
 RUN mkdir /opt \
  && cd /opt \
